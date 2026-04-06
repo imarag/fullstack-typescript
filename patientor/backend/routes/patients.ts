@@ -16,7 +16,7 @@ patientsRouter.post('/', (req, res) => {
     try {
         const newPatient = PatientNewSchema.parse(req.body);
         const addedPatient = addPatient(newPatient);
-        res.status(201).json(addedPatient);
+        res.status(200).json(addedPatient);
     } catch (error: unknown) {
         let errorMessage = 'Something went wrong.';
         if (error instanceof z.ZodError) {  

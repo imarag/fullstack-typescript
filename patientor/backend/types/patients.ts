@@ -16,7 +16,7 @@ const PatientBaseSchema = z.object({
 });
 
 export const PatientNewSchema = PatientBaseSchema.extend({
-  ssn: z.string().regex(/^\d{3}-\d{2}-\d{4}$/)
+  ssn: z.string().regex(/^\d{6}-\d{4}$/)
 });
 
 type BasePatient = z.infer<typeof PatientBaseSchema>;
